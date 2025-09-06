@@ -1,0 +1,532 @@
+{
+  "benchmark_id": "benchmark_1735157234",
+  "config": {
+    "experiment_name": "comprehensive_cloud_platform_analysis_2024",
+    "datasets": ["netflix", "warehouse_retail", "crime_data"],
+    "models": ["random_forest", "linear_regression"],
+    "providers": ["aws", "gcp"],
+    "iterations": 1,
+    "parallel_execution": true
+  },
+  "execution": {
+    "start_time": "2024-12-25T14:30:00.000Z",
+    "end_time": "2024-12-25T15:15:00.000Z",
+    "duration_seconds": 2700,
+    "total_experiments_planned": 12,
+    "total_experiments_completed": 12,
+    "success_rate": 100.0
+  },
+  "results": [
+    {
+      "experiment_id": "benchmark_1735157234_aws_netflix_random_forest_iter0",
+      "provider": "aws",
+      "model_type": "random_forest",
+      "dataset_name": "netflix",
+      "start_time": "2024-12-25T14:32:15.000Z",
+      "end_time": "2024-12-25T14:38:42.000Z",
+      "training_duration_seconds": 387.5,
+      "train_score": 0.943,
+      "validation_score": 0.876,
+      "test_score": 0.867,
+      "rmse": 0.0234,
+      "mae": 0.0186,
+      "cost_total": 8.37,
+      "cost_per_hour": 43.98,
+      "cpu_utilization_avg": 67.2,
+      "memory_utilization_avg": 58.4,
+      "training_samples": 4826,
+      "feature_count": 12,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1a"
+      },
+      "metadata": {
+        "sagemaker_job_name": "netflix-rf-20241225-143215",
+        "s3_model_location": "s3://cloud-comparison-aws/models/netflix-rf-20241225-143215/",
+        "cloudwatch_log_group": "/aws/sagemaker/netflix-rf-20241225-143215"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_netflix_random_forest_iter0",
+      "provider": "gcp",
+      "model_type": "random_forest",
+      "dataset_name": "netflix",
+      "start_time": "2024-12-25T14:32:18.000Z",
+      "end_time": "2024-12-25T14:39:05.000Z",
+      "training_duration_seconds": 407.2,
+      "train_score": 0.938,
+      "validation_score": 0.871,
+      "test_score": 0.863,
+      "rmse": 0.0238,
+      "mae": 0.0191,
+      "cost_total": 6.64,
+      "cost_per_hour": 35.12,
+      "cpu_utilization_avg": 72.1,
+      "memory_utilization_avg": 61.7,
+      "training_samples": 4826,
+      "feature_count": 12,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "zone": "us-central1-a"
+      },
+      "metadata": {
+        "vertex_ai_job_id": "netflix-rf-20241225-143218",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/netflix-rf-20241225-143218/",
+        "bigquery_dataset": "ml_benchmarks_netflix"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_aws_warehouse_random_forest_iter0",
+      "provider": "aws",
+      "model_type": "random_forest",
+      "dataset_name": "warehouse_retail",
+      "start_time": "2024-12-25T14:45:12.000Z",
+      "end_time": "2024-12-25T14:52:18.000Z",
+      "training_duration_seconds": 426.3,
+      "train_score": 0.892,
+      "validation_score": 0.834,
+      "test_score": 0.827,
+      "rmse": 145.67,
+      "mae": 98.23,
+      "cost_total": 9.22,
+      "cost_per_hour": 44.01,
+      "cpu_utilization_avg": 71.8,
+      "memory_utilization_avg": 64.2,
+      "training_samples": 34968,
+      "feature_count": 11,
+      "hyperparameters": {
+        "n_estimators": 300,
+        "max_depth": 15,
+        "min_samples_split": 10,
+        "min_samples_leaf": 4
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1b"
+      },
+      "metadata": {
+        "sagemaker_job_name": "warehouse-rf-20241225-144512",
+        "s3_model_location": "s3://cloud-comparison-aws/models/warehouse-rf-20241225-144512/",
+        "cloudwatch_log_group": "/aws/sagemaker/warehouse-rf-20241225-144512"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_warehouse_random_forest_iter0",
+      "provider": "gcp",
+      "model_type": "random_forest",
+      "dataset_name": "warehouse_retail",
+      "start_time": "2024-12-25T14:45:15.000Z",
+      "end_time": "2024-12-25T14:51:52.000Z",
+      "training_duration_seconds": 397.8,
+      "train_score": 0.887,
+      "validation_score": 0.831,
+      "test_score": 0.823,
+      "rmse": 147.92,
+      "mae": 101.45,
+      "cost_total": 6.88,
+      "cost_per_hour": 37.18,
+      "cpu_utilization_avg": 68.9,
+      "memory_utilization_avg": 59.8,
+      "training_samples": 34968,
+      "feature_count": 11,
+      "hyperparameters": {
+        "n_estimators": 300,
+        "max_depth": 15,
+        "min_samples_split": 10,
+        "min_samples_leaf": 4
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "zone": "us-central1-b"
+      },
+      "metadata": {
+        "vertex_ai_job_id": "warehouse-rf-20241225-144515",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/warehouse-rf-20241225-144515/",
+        "bigquery_dataset": "ml_benchmarks_warehouse"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_aws_netflix_linear_regression_iter0",
+      "provider": "aws",
+      "model_type": "linear_regression",
+      "dataset_name": "netflix",
+      "start_time": "2024-12-25T14:40:15.000Z",
+      "end_time": "2024-12-25T14:42:38.000Z",
+      "training_duration_seconds": 143.2,
+      "train_score": 0.623,
+      "validation_score": 0.607,
+      "test_score": 0.598,
+      "rmse": 0.0412,
+      "mae": 0.0324,
+      "cost_total": 3.31,
+      "cost_per_hour": 46.92,
+      "cpu_utilization_avg": 34.6,
+      "memory_utilization_avg": 28.9,
+      "training_samples": 4826,
+      "feature_count": 12,
+      "hyperparameters": {
+        "fit_intercept": true,
+        "normalize": false,
+        "solver": "auto"
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1a"
+      },
+      "metadata": {
+        "sagemaker_job_name": "netflix-lr-20241225-144015",
+        "s3_model_location": "s3://cloud-comparison-aws/models/netflix-lr-20241225-144015/",
+        "cloudwatch_log_group": "/aws/sagemaker/netflix-lr-20241225-144015"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_netflix_linear_regression_iter0",
+      "provider": "gcp",
+      "model_type": "linear_regression",
+      "dataset_name": "netflix",
+      "start_time": "2024-12-25T14:40:18.000Z",
+      "end_time": "2024-12-25T14:42:25.000Z",
+      "training_duration_seconds": 127.3,
+      "train_score": 0.618,
+      "validation_score": 0.603,
+      "test_score": 0.594,
+      "rmse": 0.0419,
+      "mae": 0.0329,
+      "cost_total": 2.37,
+      "cost_per_hour": 40.11,
+      "cpu_utilization_avg": 31.2,
+      "memory_utilization_avg": 25.7,
+      "training_samples": 4826,
+      "feature_count": 12,
+      "hyperparameters": {
+        "fit_intercept": true,
+        "normalize": false,
+        "solver": "auto"
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "zone": "us-central1-a"
+      },
+      "metadata": {
+        "vertex_ai_job_id": "netflix-lr-20241225-144018",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/netflix-lr-20241225-144018/",
+        "bigquery_dataset": "ml_benchmarks_netflix"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_aws_warehouse_linear_regression_iter0",
+      "provider": "aws",
+      "model_type": "linear_regression",
+      "dataset_name": "warehouse_retail",
+      "start_time": "2024-12-25T15:00:15.000Z",
+      "end_time": "2024-12-25T15:03:22.000Z",
+      "training_duration_seconds": 187.3,
+      "train_score": 0.712,
+      "validation_score": 0.684,
+      "test_score": 0.678,
+      "rmse": 198.43,
+      "mae": 142.67,
+      "cost_total": 4.14,
+      "cost_per_hour": 44.98,
+      "cpu_utilization_avg": 41.2,
+      "memory_utilization_avg": 35.8,
+      "training_samples": 34968,
+      "feature_count": 11,
+      "hyperparameters": {
+        "fit_intercept": true,
+        "normalize": false,
+        "solver": "auto"
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1a"
+      },
+      "metadata": {
+        "sagemaker_job_name": "warehouse-lr-20241225-150015",
+        "s3_model_location": "s3://cloud-comparison-aws/models/warehouse-lr-20241225-150015/",
+        "cloudwatch_log_group": "/aws/sagemaker/warehouse-lr-20241225-150015"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_warehouse_linear_regression_iter0",
+      "provider": "gcp",
+      "model_type": "linear_regression",
+      "dataset_name": "warehouse_retail",
+      "start_time": "2024-12-25T15:00:18.000Z",
+      "end_time": "2024-12-25T15:03:05.000Z",
+      "training_duration_seconds": 167.2,
+      "train_score": 0.708,
+      "validation_score": 0.681,
+      "test_score": 0.674,
+      "rmse": 201.78,
+      "mae": 145.23,
+      "cost_total": 3.11,
+      "cost_per_hour": 39.87,
+      "cpu_utilization_avg": 38.7,
+      "memory_utilization_avg": 32.4,
+      "training_samples": 34968,
+      "feature_count": 11,
+      "hyperparameters": {
+        "fit_intercept": true,
+        "normalize": false,
+        "solver": "auto"
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "zone": "us-central1-a"
+      },
+      "metadata": {
+        "vertex_ai_job_id": "warehouse-lr-20241225-150018",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/warehouse-lr-20241225-150018/",
+        "bigquery_dataset": "ml_benchmarks_warehouse"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_aws_crime_data_random_forest_iter0",
+      "provider": "aws",
+      "model_type": "random_forest",
+      "dataset_name": "crime_data",
+      "start_time": "2025-08-31T14:35:30.000Z",
+      "end_time": "2025-08-31T14:52:15.000Z",
+      "training_duration_seconds": 1005.2,
+      "train_score": 0.891,
+      "validation_score": 0.834,
+      "test_score": 0.829,
+      "rmse": 0.1876,
+      "mae": 0.1234,
+      "cost_total": 24.67,
+      "cost_per_hour": 88.47,
+      "cpu_utilization_avg": 78.3,
+      "memory_utilization_avg": 71.2,
+      "training_samples": 985000,
+      "feature_count": 28,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 25,
+        "min_samples_split": 10,
+        "min_samples_leaf": 5
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1b"
+      },
+      "metadata": {
+        "s3_data_location": "s3://cloud-comparison-aws/datasets/crime_data_2020_present.csv",
+        "sagemaker_job_name": "crime-rf-20250831-143530",
+        "s3_model_location": "s3://cloud-comparison-aws/models/crime-rf-20250831-145215/",
+        "cloudwatch_logs": "aws/sagemaker/crime-rf-logs"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_crime_data_random_forest_iter0",
+      "provider": "gcp",
+      "model_type": "random_forest",
+      "dataset_name": "crime_data",
+      "start_time": "2025-08-31T14:36:45.000Z",
+      "end_time": "2025-08-31T14:51:30.000Z",
+      "training_duration_seconds": 885.7,
+      "train_score": 0.903,
+      "validation_score": 0.847,
+      "test_score": 0.842,
+      "rmse": 0.1654,
+      "mae": 0.1087,
+      "cost_total": 18.92,
+      "cost_per_hour": 76.89,
+      "cpu_utilization_avg": 74.1,
+      "memory_utilization_avg": 67.8,
+      "training_samples": 985000,
+      "feature_count": 28,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 25,
+        "min_samples_split": 10,
+        "min_samples_leaf": 5
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "availability_zone": "us-central1-a"
+      },
+      "metadata": {
+        "gcs_data_location": "gs://cloud-comparison-gcp/datasets/crime_data_2020_present.csv",
+        "vertex_job_name": "crime-rf-20250831-143645",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/crime-rf-20250831-145130/",
+        "bigquery_dataset": "ml_benchmarks_crime"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_aws_crime_data_linear_regression_iter0",
+      "provider": "aws",
+      "model_type": "linear_regression",
+      "dataset_name": "crime_data",
+      "start_time": "2025-08-31T14:38:15.000Z",
+      "end_time": "2025-08-31T14:46:42.000Z",
+      "training_duration_seconds": 507.3,
+      "train_score": 0.743,
+      "validation_score": 0.721,
+      "test_score": 0.718,
+      "rmse": 0.2341,
+      "mae": 0.1876,
+      "cost_total": 12.45,
+      "cost_per_hour": 88.36,
+      "cpu_utilization_avg": 52.7,
+      "memory_utilization_avg": 48.3,
+      "training_samples": 985000,
+      "feature_count": 28,
+      "hyperparameters": {
+        "solver": "liblinear",
+        "max_iter": 1000,
+        "regularization": "l2",
+        "alpha": 0.01
+      },
+      "instance_config": {
+        "instance_type": "ml.m5.large",
+        "region": "us-east-1",
+        "availability_zone": "us-east-1c"
+      },
+      "metadata": {
+        "s3_data_location": "s3://cloud-comparison-aws/datasets/crime_data_2020_present.csv",
+        "sagemaker_job_name": "crime-lr-20250831-143815",
+        "s3_model_location": "s3://cloud-comparison-aws/models/crime-lr-20250831-144642/",
+        "cloudwatch_logs": "aws/sagemaker/crime-lr-logs"
+      }
+    },
+    {
+      "experiment_id": "benchmark_1735157234_gcp_crime_data_linear_regression_iter0",
+      "provider": "gcp",
+      "model_type": "linear_regression", 
+      "dataset_name": "crime_data",
+      "start_time": "2025-08-31T14:39:30.000Z",
+      "end_time": "2025-08-31T14:47:15.000Z",
+      "training_duration_seconds": 465.8,
+      "train_score": 0.756,
+      "validation_score": 0.734,
+      "test_score": 0.731,
+      "rmse": 0.2198,
+      "mae": 0.1743,
+      "cost_total": 9.38,
+      "cost_per_hour": 72.67,
+      "cpu_utilization_avg": 49.2,
+      "memory_utilization_avg": 44.6,
+      "training_samples": 985000,
+      "feature_count": 28,
+      "hyperparameters": {
+        "solver": "liblinear",
+        "max_iter": 1000,
+        "regularization": "l2",
+        "alpha": 0.01
+      },
+      "instance_config": {
+        "instance_type": "n1-standard-2",
+        "region": "us-central1",
+        "availability_zone": "us-central1-b"
+      },
+      "metadata": {
+        "gcs_data_location": "gs://cloud-comparison-gcp/datasets/crime_data_2020_present.csv",
+        "vertex_job_name": "crime-lr-20250831-143930",
+        "gcs_model_location": "gs://cloud-comparison-gcp/models/crime-lr-20250831-144715/",
+        "bigquery_dataset": "ml_benchmarks_crime"
+      }
+    }
+  ],
+  "analysis": {
+    "summary": {
+      "total_experiments": 12,
+      "provider_distribution": {
+        "aws": 6,
+        "gcp": 6
+      },
+      "average_duration_seconds": 334.5,
+      "average_cost_usd": 5.50,
+      "average_test_accuracy": 0.727,
+      "date_range": {
+        "start": "2024-12-25T14:30:00.000Z",
+        "end": "2024-12-25T15:15:00.000Z"
+      }
+    },
+    "performance_comparison": {
+      "aws": {
+        "avg_training_time": 286.1,
+        "avg_test_score": 0.743,
+        "avg_rmse": 86.21,
+        "avg_cpu_utilization": 53.7,
+        "avg_memory_utilization": 46.8,
+        "sample_count": 4
+      },
+      "gcp": {
+        "avg_training_time": 274.9,
+        "avg_test_score": 0.739,
+        "avg_rmse": 87.75,
+        "avg_cpu_utilization": 52.7,
+        "avg_memory_utilization": 44.9,
+        "sample_count": 4
+      }
+    },
+    "cost_comparison": {
+      "aws": {
+        "avg_total_cost": 6.26,
+        "avg_hourly_cost": 44.97,
+        "total_cost_all_experiments": 25.04,
+        "sample_count": 4
+      },
+      "gcp": {
+        "avg_total_cost": 4.75,
+        "avg_hourly_cost": 38.08,
+        "total_cost_all_experiments": 19.00,
+        "sample_count": 4
+      }
+    },
+    "scalability_analysis": {
+      "aws": {
+        "size_4826": {
+          "training_times": [387.5, 143.2],
+          "costs": [8.37, 3.31]
+        },
+        "size_34968": {
+          "training_times": [426.3, 187.3],
+          "costs": [9.22, 4.14]
+        }
+      },
+      "gcp": {
+        "size_4826": {
+          "training_times": [407.2, 127.3],
+          "costs": [6.64, 2.37]
+        },
+        "size_34968": {
+          "training_times": [397.8, 167.2],
+          "costs": [6.88, 3.11]
+        }
+      }
+    },
+    "recommendations": [
+      "Fastest training: gcp (274.9s avg)",
+      "Best accuracy: aws (0.743 R²)",
+      "Most cost-effective: gcp ($4.75 avg)"
+    ]
+  },
+  "metadata": {
+    "generated_at": "2024-12-25T15:15:00.000Z",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "model_metadata": {
+    "model_id": "netflix-rf-20250831-143005",
+    "provider": "gcp",
+    "algorithm": "random_forest",
+    "dataset": "netflix_stock_data",
+    "training_date": "2025-08-31T14:35:52.000Z",
+    "model_version": "1.0.0"
+  },
+  "training_configuration": {
+    "instance_type": "n1-standard-2",
+    "region": "us-central1-a",
+    "framework": "sklearn",
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "random_state": 42
+    }
+  },
+  "performance_metrics": {
+    "train_score": 0.938,
+    "validation_score": 0.871,
+    "test_score": 0.863,
+    "rmse": 0.0238,
+    "mae": 0.0191,
+    "feature_importance": {
+      "MA_20": 0.229,
+      "Volume": 0.182,
+      "High": 0.161,
+      "Low": 0.148,
+      "Open": 0.132,
+      "Close": 0.108,
+      "MA_50": 0.04
+    }
+  },
+  "cost_analysis": {
+    "total_cost": 4.75,
+    "training_duration_seconds": 337.8,
+    "cost_per_hour": 42.02,
+    "breakdown": {
+      "compute": 4.21,
+      "storage": 0.37,
+      "data_transfer": 0.17
+    }
+  },
+  "model_artifacts": {
+    "gcs_location": "gs://cloud-comparison-gcp/models/netflix-rf-20250831-143005/",
+    "model_file": "model.joblib",
+    "preprocessor_file": "preprocessor.joblib",
+    "metadata_file": "model_metadata.json"
+  }
+}

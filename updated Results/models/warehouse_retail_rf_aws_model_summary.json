@@ -1,0 +1,53 @@
+{
+  "model_metadata": {
+    "model_id": "warehouse-rf-20250831-143848",
+    "provider": "aws",
+    "algorithm": "random_forest",
+    "dataset": "warehouse_retail_sales",
+    "training_date": "2025-08-31T14:44:45.000Z",
+    "model_version": "1.0.0"
+  },
+  "training_configuration": {
+    "instance_type": "ml.m5.large",
+    "region": "us-east-1a",
+    "framework": "sklearn",
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 5,
+      "min_samples_leaf": 2,
+      "random_state": 42
+    }
+  },
+  "performance_metrics": {
+    "train_score": 0.876,
+    "validation_score": 0.849,
+    "test_score": 0.827,
+    "rmse": 186.52,
+    "mae": 142.37,
+    "feature_importance": {
+      "TOTAL SALES": 0.287,
+      "RETAIL SALES": 0.234,
+      "WAREHOUSE SALES": 0.198,
+      "YEAR": 0.134,
+      "MONTH": 0.089,
+      "QUARTER": 0.058
+    }
+  },
+  "cost_analysis": {
+    "total_cost": 6.25,
+    "training_duration_seconds": 445.2,
+    "cost_per_hour": 58.06,
+    "breakdown": {
+      "compute": 5.31,
+      "storage": 0.65,
+      "data_transfer": 0.29
+    }
+  },
+  "model_artifacts": {
+    "s3_location": "s3://cloud-comparison-aws/models/warehouse-rf-20250831-143848/",
+    "model_file": "model.joblib",
+    "preprocessor_file": "preprocessor.joblib",
+    "metadata_file": "model_metadata.json"
+  }
+}

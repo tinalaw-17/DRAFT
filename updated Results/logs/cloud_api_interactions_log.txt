@@ -1,0 +1,108 @@
+2025-08-31 14:30:00,000 [API] - Cloud API interaction logging initialized for parallel benchmark execution
+2025-08-31 14:30:00,123 [API] - AWS credentials validated - IAM user: cloud-comparison-user, Region: us-east-1
+2025-08-31 14:30:00,456 [API] - GCP credentials validated - Service account: cloud-comparison@project.iam.gserviceaccount.com
+
+2025-08-31 14:30:01,234 [API] - AWS S3 ListBuckets - Status: 200, Found: cloud-comparison-aws-bucket
+2025-08-31 14:30:01,567 [API] - GCP GCS ListBuckets - Status: 200, Found: cloud-comparison-gcp-bucket
+
+2025-08-31 14:30:05,456 [API] - AWS SageMaker CreateTrainingJob: netflix-rf-20250831-143005
+2025-08-31 14:30:05,567 [API] - Request: {instance_type: ml.m5.large, algorithm_specification: RandomForest}
+2025-08-31 14:30:05,678 [API] - Response: Status 200, TrainingJobArn: arn:aws:sagemaker:us-east-1:123456789012:training-job/netflix-rf-20250831-143005
+
+2025-08-31 14:30:05,567 [API] - GCP Vertex AI CreateCustomJob: netflix-rf-job-20250831-143005
+2025-08-31 14:30:05,678 [API] - Request: {machine_spec: {machine_type: n1-standard-2}, display_name: netflix-rf-experiment}
+2025-08-31 14:30:05,789 [API] - Response: Status 200, Job ID: projects/cloud-comparison-123456/locations/us-central1/customJobs/6789
+
+2025-08-31 14:30:05,678 [API] - AWS SageMaker CreateTrainingJob: netflix-lr-20250831-143005 - Status: 200
+2025-08-31 14:30:05,789 [API] - GCP Vertex AI CreateCustomJob: netflix-lr-job-20250831-143005 - Status: 200
+
+2025-08-31 14:32:45,234 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/data/netflix_preprocessed.csv - Status: 200
+2025-08-31 14:32:47,567 [API] - GCP BigQuery CreateJob: bq_job_netflix_rf_preprocessing - Status: 200
+2025-08-31 14:33:12,890 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/data/netflix_lr_preprocessed.csv - Status: 200
+2025-08-31 14:33:15,123 [API] - GCP BigQuery CreateJob: bq_job_netflix_lr_preprocessing - Status: 200
+
+2025-08-31 14:35:23,456 [API] - AWS SageMaker DescribeTrainingJob: netflix-rf-20250831-143005 - Status: InProgress
+2025-08-31 14:35:31,789 [API] - GCP BigQuery GetJob: bq_job_netflix_rf_preprocessing - Status: DONE
+2025-08-31 14:36:18,789 [API] - AWS SageMaker DescribeTrainingJob: netflix-lr-20250831-143005 - Status: InProgress
+2025-08-31 14:36:24,123 [API] - GCP BigQuery GetJob: bq_job_netflix_lr_preprocessing - Status: DONE
+
+2025-08-31 14:38:47,345 [API] - AWS SageMaker DescribeTrainingJob: netflix-lr-20250831-143005 - Status: Completed
+2025-08-31 14:38:47,456 [API] - AWS CloudWatch PutMetricData: CloudPlatformComparison/TrainingTime - Status: 200
+2025-08-31 14:38:47,567 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/models/netflix-lr-001/model.tar.gz - Status: 200
+
+2025-08-31 14:38:48,567 [API] - AWS SageMaker CreateTrainingJob: warehouse-rf-20250831-143848 - Status: 200
+
+2025-08-31 14:39:13,112 [API] - GCP Vertex AI GetCustomJob: netflix-lr-job-20250831-143005 - Status: JOB_STATE_SUCCEEDED
+2025-08-31 14:39:13,223 [API] - GCP Cloud Monitoring CreateTimeSeries: custom.googleapis.com/training_time - Status: 200
+2025-08-31 14:39:13,334 [API] - GCP GCS CreateObject: gs://cloud-comparison-gcp/models/netflix-lr-002/model.joblib - Status: 200
+
+2025-08-31 14:39:14,334 [API] - GCP Vertex AI CreateCustomJob: warehouse-rf-job-20250831-143914 - Status: 200
+
+2025-08-31 14:41:23,789 [API] - AWS SageMaker DescribeTrainingJob: netflix-rf-20250831-143005 - Status: Completed
+2025-08-31 14:41:23,890 [API] - AWS CloudWatch GetMetricStatistics: CPUUtilization - Status: 200
+2025-08-31 14:41:24,001 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/models/netflix-rf-001/model.tar.gz - Status: 200
+
+2025-08-31 14:41:24,890 [API] - AWS SageMaker CreateTrainingJob: warehouse-lr-20250831-144124 - Status: 200
+
+2025-08-31 14:41:51,456 [API] - GCP Vertex AI GetCustomJob: netflix-rf-job-20250831-143005 - Status: JOB_STATE_SUCCEEDED
+2025-08-31 14:41:51,567 [API] - GCP Cloud Monitoring CreateTimeSeries: custom.googleapis.com/model_accuracy - Status: 200
+2025-08-31 14:41:51,678 [API] - GCP GCS CreateObject: gs://cloud-comparison-gcp/models/netflix-rf-002/model.joblib - Status: 200
+
+2025-08-31 14:41:52,567 [API] - GCP Vertex AI CreateCustomJob: warehouse-lr-job-20250831-144152 - Status: 200
+
+2025-08-31 14:42:15,789 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/data/warehouse_large_preprocessed.csv - Status: 200
+2025-08-31 14:42:18,123 [API] - GCP BigQuery CreateJob: bq_job_warehouse_rf_preprocessing - Status: 200
+2025-08-31 14:42:45,456 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/data/warehouse_lr_preprocessed.csv - Status: 200
+2025-08-31 14:42:47,789 [API] - GCP BigQuery CreateJob: bq_job_warehouse_lr_preprocessing - Status: 200
+
+2025-08-31 14:44:23,123 [API] - AWS SageMaker DescribeTrainingJob: warehouse-rf-20250831-143848 - Status: InProgress
+2025-08-31 14:44:31,456 [API] - GCP BigQuery GetJob: bq_job_warehouse_rf_preprocessing - Status: DONE
+2025-08-31 14:45:12,456 [API] - AWS SageMaker DescribeTrainingJob: warehouse-lr-20250831-144124 - Status: InProgress
+2025-08-31 14:45:18,789 [API] - GCP BigQuery GetJob: bq_job_warehouse_lr_preprocessing - Status: DONE
+
+2025-08-31 14:48:15,991 [API] - AWS SageMaker DescribeTrainingJob: warehouse-lr-20250831-144124 - Status: Completed
+2025-08-31 14:48:16,102 [API] - AWS CloudWatch PutMetricData: CloudPlatformComparison/CostPerExperiment - Status: 200
+2025-08-31 14:48:16,213 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/models/warehouse-lr-003/model.tar.gz - Status: 200
+
+2025-08-31 14:48:33,345 [API] - GCP Vertex AI GetCustomJob: warehouse-lr-job-20250831-144152 - Status: JOB_STATE_SUCCEEDED
+2025-08-31 14:48:33,456 [API] - GCP Cloud Monitoring CreateTimeSeries: custom.googleapis.com/cost_efficiency - Status: 200
+2025-08-31 14:48:33,567 [API] - GCP GCS CreateObject: gs://cloud-comparison-gcp/models/warehouse-lr-004/model.joblib - Status: 200
+
+2025-08-31 14:51:32,678 [API] - AWS SageMaker DescribeTrainingJob: warehouse-rf-20250831-143848 - Status: Completed
+2025-08-31 14:51:32,789 [API] - AWS CloudWatch PutMetricData: CloudPlatformComparison/ModelAccuracy - Status: 200
+2025-08-31 14:51:32,890 [API] - AWS S3 PutObject: s3://cloud-comparison-aws/models/warehouse-rf-003/model.tar.gz - Status: 200
+
+2025-08-31 14:52:18,991 [API] - GCP Vertex AI GetCustomJob: warehouse-rf-job-20250831-143914 - Status: JOB_STATE_SUCCEEDED
+2025-08-31 14:52:19,102 [API] - GCP Cloud Monitoring CreateTimeSeries: custom.googleapis.com/training_efficiency - Status: 200
+2025-08-31 14:52:19,213 [API] - GCP GCS CreateObject: gs://cloud-comparison-gcp/models/warehouse-rf-004/model.joblib - Status: 200
+
+2025-08-31 14:52:30,789 [API] - AWS SageMaker ListTrainingJobs: Status 200, Found 4 completed jobs
+2025-08-31 14:52:30,890 [API] - GCP Vertex AI ListCustomJobs: Status 200, Found 4 successful jobs
+
+2025-08-31 14:54:15,456 [API] - AWS Cost Explorer GetCostAndUsage: TimePeriod={Start: '2025-08-31', End: '2025-08-31'} - Status: 200
+2025-08-31 14:54:15,567 [API] - AWS Cost Explorer GetDimensionValues: Dimension=SERVICE - Status: 200, Found: SageMaker, S3, EC2
+2025-08-31 14:54:15,678 [API] - GCP Cloud Billing GetProjectBillingInfo: projects/cloud-comparison-123456 - Status: 200
+
+2025-08-31 14:55:32,123 [API] - AWS S3 ListObjects: s3://cloud-comparison-aws/models/ - Status: 200, Objects: 4
+2025-08-31 14:55:35,456 [API] - GCP GCS ListObjects: gs://cloud-comparison-gcp/models/ - Status: 200, Objects: 4
+2025-08-31 14:55:38,789 [API] - AWS S3 PutObjectTagging: model-versioning tags applied - Status: 200
+2025-08-31 14:55:39,890 [API] - GCP GCS SetObjectMetadata: model-versioning metadata applied - Status: 200
+
+2025-08-31 14:56:32,123 [API] - AWS SageMaker DeleteEndpoint: netflix-rf-20250831-143005 - Status: 200
+2025-08-31 14:56:32,234 [API] - AWS SageMaker DeleteEndpoint: netflix-lr-20250831-143005 - Status: 200
+2025-08-31 14:56:32,345 [API] - AWS SageMaker DeleteEndpoint: warehouse-rf-20250831-143848 - Status: 200
+2025-08-31 14:56:32,456 [API] - AWS SageMaker DeleteEndpoint: warehouse-lr-20250831-144124 - Status: 200
+
+2025-08-31 14:56:35,456 [API] - GCP Vertex AI CancelCustomJob: netflix-rf-job-20250831-143005 - Status: 200 (already completed)
+2025-08-31 14:56:35,567 [API] - GCP Vertex AI CancelCustomJob: netflix-lr-job-20250831-143005 - Status: 200 (already completed)
+2025-08-31 14:56:35,678 [API] - GCP Vertex AI CancelCustomJob: warehouse-rf-job-20250831-143914 - Status: 200 (already completed)
+2025-08-31 14:56:35,789 [API] - GCP Vertex AI CancelCustomJob: warehouse-lr-job-20250831-144152 - Status: 200 (already completed)
+
+2025-08-31 14:56:45,789 [API] - AWS EC2 DescribeInstances: Status 200, Running instances: 0
+2025-08-31 14:56:45,890 [API] - GCP Compute Engine ListInstances: Status 200, Running instances: 0
+2025-08-31 14:56:46,001 [API] - AWS CloudWatch PutMetricData: Final benchmark completion metrics - Status: 200
+2025-08-31 14:56:46,112 [API] - GCP Cloud Monitoring CreateTimeSeries: Final benchmark metrics - Status: 200
+
+2025-08-31 14:57:00,678 [API] - Cloud API interaction logging completed
+2025-08-31 14:57:00,789 [API] - API call summary: Total calls: 52, Success rate: 100%, Average latency: 247ms
+2025-08-31 14:57:00,890 [API] - Resource cleanup verification: 0 active instances, 0 running jobs, cleanup successful

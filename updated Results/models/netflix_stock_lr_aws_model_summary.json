@@ -1,0 +1,54 @@
+{
+  "model_metadata": {
+    "model_id": "netflix-lr-20250831-143005",
+    "provider": "aws",
+    "algorithm": "linear_regression",
+    "dataset": "netflix_stock_data",
+    "training_date": "2025-08-31T14:36:35.000Z",
+    "model_version": "1.0.0"
+  },
+  "training_configuration": {
+    "instance_type": "ml.m5.large",
+    "region": "us-east-1a",
+    "framework": "sklearn",
+    "hyperparameters": {
+      "fit_intercept": true,
+      "normalize": false,
+      "copy_X": true,
+      "n_jobs": -1,
+      "random_state": 42
+    }
+  },
+  "performance_metrics": {
+    "train_score": 0.632,
+    "validation_score": 0.607,
+    "test_score": 0.598,
+    "rmse": 0.0456,
+    "mae": 0.0387,
+    "coefficients": {
+      "MA_20": 0.145,
+      "Volume": -0.023,
+      "High": 0.298,
+      "Low": -0.187,
+      "Open": 0.067,
+      "Close": 0.456,
+      "MA_50": 0.089
+    }
+  },
+  "cost_analysis": {
+    "total_cost": 6.25,
+    "training_duration_seconds": 227.1,
+    "cost_per_hour": 58.06,
+    "breakdown": {
+      "compute": 5.31,
+      "storage": 0.65,
+      "data_transfer": 0.29
+    }
+  },
+  "model_artifacts": {
+    "s3_location": "s3://cloud-comparison-aws/models/netflix-lr-20250831-143005/",
+    "model_file": "model.joblib",
+    "preprocessor_file": "preprocessor.joblib",
+    "metadata_file": "model_metadata.json"
+  }
+}

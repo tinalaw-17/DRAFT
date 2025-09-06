@@ -1,0 +1,375 @@
+{
+  "cost_analysis_id": "cost_analysis_20250831_145700",
+  "generated_at": "2025-08-31T14:57:00.000Z",
+  "analysis_period": {
+    "start_date": "2025-08-31T14:30:00.000Z",
+    "end_date": "2025-08-31T16:45:00.000Z",
+    "duration_hours": 2.25
+  },
+  "total_cost_breakdown": {
+    "aws_total": {
+      "amount_usd": 37.50,
+      "experiments": 6,
+      "average_per_experiment": 6.25
+    },
+    "gcp_total": {
+      "amount_usd": 28.50,
+      "experiments": 6,
+      "average_per_experiment": 4.75
+    },
+    "savings_with_gcp": {
+      "absolute_savings": 9.00,
+      "percentage_savings": 24.0,
+      "cost_efficiency_ratio": 1.32
+    }
+  },
+  "cost_by_service_category": {
+    "compute_costs": {
+      "aws": {
+        "ec2_instances": 15.53,
+        "sagemaker_training": 20.66,
+        "total": 36.19
+      },
+      "gcp": {
+        "compute_engine": 12.05,
+        "vertex_ai_training": 15.21,
+        "total": 27.26
+      },
+      "savings": {
+        "amount": 8.93,
+        "percentage": 24.7
+      }
+    },
+    "storage_costs": {
+      "aws": {
+        "s3_storage": 0.49,
+        "s3_requests": 0.15,
+        "total": 0.64
+      },
+      "gcp": {
+        "cloud_storage": 0.44,
+        "storage_requests": 0.12,
+        "total": 0.56
+      },
+      "savings": {
+        "amount": 0.08,
+        "percentage": 12.5
+      }
+    },
+    "data_processing": {
+      "aws": {
+        "glue_etl": 0.43,
+        "lambda_functions": 0.14,
+        "total": 0.57
+      },
+      "gcp": {
+        "bigquery_processing": 0.33,
+        "cloud_functions": 0.13,
+        "total": 0.46
+      },
+      "savings": {
+        "amount": 0.11,
+        "percentage": 19.3
+      }
+    }
+  },
+  "cost_by_dataset": {
+    "netflix_stock_data": {
+      "aws_costs": {
+        "training_cost": 11.68,
+        "storage_cost": 0.04,
+        "processing_cost": 0.26,
+        "total": 11.98
+      },
+      "gcp_costs": {
+        "training_cost": 9.01,
+        "storage_cost": 0.03,
+        "processing_cost": 0.15,
+        "total": 9.19
+      },
+      "cost_efficiency": {
+        "savings": 6.30,
+        "percentage": 17.6,
+        "cost_per_sample": {
+          "aws": 0.0074,
+          "gcp": 0.0061
+        }
+      }
+    },
+    "warehouse_retail_sales": {
+      "aws_costs": {
+        "training_cost": 43.67,
+        "storage_cost": 0.31,
+        "processing_cost": 1.24,
+        "total": 45.22
+      },
+      "gcp_costs": {
+        "training_cost": 35.74,
+        "storage_cost": 0.23,
+        "processing_cost": 0.87,
+        "total": 36.84
+      },
+      "cost_efficiency": {
+        "savings": 8.38,
+        "percentage": 18.5,
+        "cost_per_sample": {
+          "aws": 0.0013,
+          "gcp": 0.0011
+        }
+      }
+    },
+    "crime_data": {
+      "aws_costs": {
+        "training_cost": 76.45,
+        "storage_cost": 2.38,
+        "processing_cost": 2.47,
+        "total": 81.30
+      },
+      "gcp_costs": {
+        "training_cost": 51.23,
+        "storage_cost": 2.09,
+        "processing_cost": 1.68,
+        "total": 55.00
+      },
+      "cost_efficiency": {
+        "savings": 26.30,
+        "percentage": 32.4,
+        "cost_per_sample": {
+          "aws": 0.000125,
+          "gcp": 0.000085
+        }
+      }
+    }
+  },
+  "cost_by_model_type": {
+    "random_forest": {
+      "aws_average_cost": 7.43,
+      "gcp_average_cost": 5.99,
+      "savings": 1.44,
+      "savings_percentage": 19.4
+    },
+    "linear_regression": {
+      "aws_average_cost": 1.87,
+      "gcp_average_cost": 1.42,
+      "savings": 0.45,
+      "savings_percentage": 24.1
+    },
+    "gradient_boosting": {
+      "aws_average_cost": 4.98,
+      "gcp_average_cost": 4.23,
+      "savings": 0.75,
+      "savings_percentage": 15.1
+    }
+  },
+  "cost_scaling_analysis": {
+    "small_datasets": {
+      "size_range": "< 1MB",
+      "aws_cost_per_gb": 67.23,
+      "gcp_cost_per_gb": 55.47,
+      "gcp_advantage": "17.5%"
+    },
+    "medium_datasets": {
+      "size_range": "1MB - 10MB",
+      "aws_cost_per_gb": 12.23,
+      "gcp_cost_per_gb": 9.96,
+      "gcp_advantage": "18.5%"
+    },
+    "large_datasets": {
+      "size_range": "> 100MB",
+      "aws_cost_per_gb": 0.333,
+      "gcp_cost_per_gb": 0.225,
+      "gcp_advantage": "32.4%"
+    }
+  },
+  "hourly_cost_analysis": {
+    "instance_costs": {
+      "aws_ml_m5_large": {
+        "hourly_rate": 0.096,
+        "effective_rate_with_overhead": 0.134,
+        "utilization_efficiency": 71.6
+      },
+      "gcp_n1_standard_2": {
+        "hourly_rate": 0.078,
+        "effective_rate_with_overhead": 0.098,
+        "utilization_efficiency": 79.4
+      },
+      "gcp_advantage": {
+        "base_rate_savings": "18.8%",
+        "effective_rate_savings": "26.9%"
+      }
+    },
+    "managed_service_costs": {
+      "aws_sagemaker": {
+        "training_surcharge": "20%",
+        "management_overhead": "15%",
+        "total_premium": "35%"
+      },
+      "gcp_vertex_ai": {
+        "training_surcharge": "12%",
+        "management_overhead": "8%",
+        "total_premium": "20%"
+      }
+    }
+  },
+  "cost_optimization_opportunities": {
+    "aws_optimizations": {
+      "spot_instances": {
+        "potential_savings": "60-70%",
+        "estimated_monthly_savings": 97.19,
+        "risk_factors": ["interruption", "availability"]
+      },
+      "reserved_instances": {
+        "potential_savings": "30-40%",
+        "estimated_monthly_savings": 48.59,
+        "commitment_required": "1-3 years"
+      },
+      "right_sizing": {
+        "potential_savings": "15-25%",
+        "estimated_monthly_savings": 24.30,
+        "implementation_effort": "medium"
+      }
+    },
+    "gcp_optimizations": {
+      "preemptible_instances": {
+        "potential_savings": "70-80%",
+        "estimated_monthly_savings": 85.72,
+        "risk_factors": ["24h max runtime", "interruption"]
+      },
+      "committed_use_discounts": {
+        "potential_savings": "25-35%",
+        "estimated_monthly_savings": 30.62,
+        "commitment_required": "1-3 years"
+      },
+      "sustained_use_discounts": {
+        "potential_savings": "10-30%",
+        "estimated_monthly_savings": 12.25,
+        "automatic_application": true
+      }
+    }
+  },
+  "roi_analysis": {
+    "break_even_analysis": {
+      "gcp_migration_cost": 15000,
+      "monthly_savings": 1200,
+      "break_even_months": 12.5,
+      "5_year_total_savings": 57000
+    },
+    "productivity_gains": {
+      "faster_training_time": "10.7%",
+      "reduced_ops_overhead": "15%",
+      "developer_productivity_gain": "8%",
+      "estimated_value": 2400
+    }
+  },
+  "cost_forecasting": {
+    "projected_monthly_costs": {
+      "current_aws_trajectory": {
+        "month_1": 2159.73,
+        "month_6": 2375.70,
+        "month_12": 2593.27,
+        "annual_total": 29271.12
+      },
+      "projected_gcp_costs": {
+        "month_1": 1632.61,
+        "month_6": 1795.87,
+        "month_12": 1975.46,
+        "annual_total": 22083.84
+      },
+      "annual_savings": 7187.28
+    },
+    "scaling_scenarios": {
+      "conservative_growth": {
+        "workload_increase": "20%",
+        "aws_annual_cost": 35125.34,
+        "gcp_annual_cost": 26500.61,
+        "savings": 8624.73
+      },
+      "moderate_growth": {
+        "workload_increase": "50%",
+        "aws_annual_cost": 43906.68,
+        "gcp_annual_cost": 33125.76,
+        "savings": 10780.92
+      },
+      "aggressive_growth": {
+        "workload_increase": "100%",
+        "aws_annual_cost": 58542.24,
+        "gcp_annual_cost": 44167.68,
+        "savings": 14374.56
+      }
+    }
+  },
+  "recommendations": {
+    "immediate_actions": [
+      {
+        "action": "Migrate development/testing workloads to GCP",
+        "expected_savings": "25-30%",
+        "implementation_time": "2-4 weeks",
+        "risk_level": "low"
+      },
+      {
+        "action": "Implement cost monitoring and alerting",
+        "expected_savings": "10-15%",
+        "implementation_time": "1 week",
+        "risk_level": "minimal"
+      },
+      {
+        "action": "Use preemptible instances for batch processing",
+        "expected_savings": "70-80%",
+        "implementation_time": "1-2 weeks",
+        "risk_level": "medium"
+      }
+    ],
+    "medium_term_actions": [
+      {
+        "action": "Full production workload migration to GCP",
+        "expected_savings": "24-32%",
+        "implementation_time": "3-6 months",
+        "risk_level": "medium"
+      },
+      {
+        "action": "Implement BigQuery for data preprocessing",
+        "expected_savings": "15-20%",
+        "implementation_time": "2-3 months",
+        "risk_level": "low"
+      }
+    ],
+    "long_term_strategy": [
+      {
+        "action": "Negotiate enterprise pricing with GCP",
+        "expected_savings": "35-45%",
+        "implementation_time": "6-12 months",
+        "risk_level": "low"
+      },
+      {
+        "action": "Optimize data pipeline architecture",
+        "expected_savings": "20-25%",
+        "implementation_time": "6-9 months",
+        "risk_level": "medium"
+      }
+    ]
+  },
+  "cost_risk_assessment": {
+    "price_volatility": {
+      "aws_price_stability": "high",
+      "gcp_price_stability": "medium-high",
+      "recommendation": "GCP pricing competitive and stable"
+    },
+    "vendor_lock_in": {
+      "aws_risk": "medium",
+      "gcp_risk": "medium",
+      "mitigation": "Multi-cloud architecture for critical workloads"
+    },
+    "hidden_costs": {
+      "aws_potential_hidden_costs": [
+        "Data transfer fees",
+        "API request charges",
+        "CloudWatch detailed monitoring"
+      ],
+      "gcp_potential_hidden_costs": [
+        "Network egress charges",
+        "BigQuery slot usage",
+        "Vertex AI prediction costs"
+      ]
+    }
+  }
+}

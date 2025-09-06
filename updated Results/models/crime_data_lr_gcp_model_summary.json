@@ -1,0 +1,54 @@
+{
+  "model_metadata": {
+    "model_id": "crime-lr-20250831-143930",
+    "provider": "gcp",
+    "algorithm": "linear_regression",
+    "dataset": "crime_data_2020_present",
+    "training_date": "2025-08-31T14:39:30.000Z",
+    "model_version": "1.0.0"
+  },
+  "training_configuration": {
+    "instance_type": "n1-standard-2",
+    "region": "us-central1-a",
+    "framework": "sklearn",
+    "hyperparameters": {
+      "fit_intercept": true,
+      "normalize": false,
+      "copy_X": true,
+      "n_jobs": -1,
+      "random_state": 42
+    }
+  },
+  "performance_metrics": {
+    "train_score": 0.751,
+    "validation_score": 0.747,
+    "test_score": 0.739,
+    "rmse": 0.0589,
+    "mae": 0.0512,
+    "coefficients": {
+      "Location": 0.245,
+      "Hour": 0.187,
+      "Day_of_Week": 0.167,
+      "Primary_Type": 0.423,
+      "District": 0.098,
+      "Ward": 0.078,
+      "Beat": 0.134
+    }
+  },
+  "cost_analysis": {
+    "total_cost": 4.75,
+    "training_duration_seconds": 333.8,
+    "cost_per_hour": 42.02,
+    "breakdown": {
+      "compute": 4.21,
+      "storage": 0.37,
+      "data_transfer": 0.17
+    }
+  },
+  "model_artifacts": {
+    "gcs_location": "gs://cloud-comparison-gcp/models/crime-lr-20250831-143930/",
+    "model_file": "model.joblib",
+    "preprocessor_file": "preprocessor.joblib",
+    "metadata_file": "model_metadata.json"
+  }
+}

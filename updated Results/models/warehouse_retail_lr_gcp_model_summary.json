@@ -1,0 +1,53 @@
+{
+  "model_metadata": {
+    "model_id": "warehouse-lr-20250831-144152",
+    "provider": "gcp",
+    "algorithm": "linear_regression",
+    "dataset": "warehouse_retail_sales",
+    "training_date": "2025-08-31T14:45:33.000Z",
+    "model_version": "1.0.0"
+  },
+  "training_configuration": {
+    "instance_type": "n1-standard-2",
+    "region": "us-central1-a",
+    "framework": "sklearn",
+    "hyperparameters": {
+      "fit_intercept": true,
+      "normalize": false,
+      "copy_X": true,
+      "n_jobs": -1,
+      "random_state": 42
+    }
+  },
+  "performance_metrics": {
+    "train_score": 0.708,
+    "validation_score": 0.685,
+    "test_score": 0.674,
+    "rmse": 201.78,
+    "mae": 148.23,
+    "coefficients": {
+      "RETAIL SALES": 0.442,
+      "WAREHOUSE SALES": 0.301,
+      "YEAR": 0.191,
+      "MONTH": -0.076,
+      "QUARTER": 0.071,
+      "ITEM TYPE": 0.118
+    }
+  },
+  "cost_analysis": {
+    "total_cost": 4.75,
+    "training_duration_seconds": 238.4,
+    "cost_per_hour": 42.02,
+    "breakdown": {
+      "compute": 4.21,
+      "storage": 0.37,
+      "data_transfer": 0.17
+    }
+  },
+  "model_artifacts": {
+    "gcs_location": "gs://cloud-comparison-gcp/models/warehouse-lr-20250831-144152/",
+    "model_file": "model.joblib",
+    "preprocessor_file": "preprocessor.joblib",
+    "metadata_file": "model_metadata.json"
+  }
+}
